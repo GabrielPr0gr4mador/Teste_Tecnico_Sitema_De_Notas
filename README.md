@@ -1,92 +1,108 @@
-# Sistema de Gerenciamento de Notas e Frequência WEB E BACKEND
+# Sistema de Gerenciamento de Notas e Frequência
 
-Sistema web desenvolvido para auxiliar professores no gerenciamento de notas e frequência de alunos, com cálculos automáticos de médias e identificação de alunos que necessitam atenção especial.
+Sistema desenvolvido para auxiliar professores no gerenciamento de notas e frequência de alunos, com cálculos automáticos de médias e identificação de alunos que necessitam atenção especial.
+
+Desenvolvido como parte do processo seletivo DTI Digital.
+
+---
 
 ## Tecnologias Utilizadas
 
-### Frontend
-- React com TypeScript
-- Vite - Build
+### Frontend Web
+- React 18 com TypeScript
+- Vite - Build tool
 - React Router DOM - Navegação
 - Tailwind CSS - Estilização
 - Axios - Requisições HTTP
 - Lucide React - Ícones
 
+### Mobile
+- React Native com Expo
+- TypeScript
+- React Navigation
+- StyleSheet nativo
+- Axios
+
 ### Backend
 - Node.js com Express
-- ES Modules (type: module)
-- CORS – Cross-Origin Resource Sharing
-- JSON File Storage - Persistência de dados (simulando banco)
+- ES Modules
+- CORS
+- JSON File Storage
+
+---
 
 ## Funcionalidades
 
 ### Gerenciamento de Alunos
-- Cadastro de novos alunos
-- Edição de informações
-- Exclusão de alunos
-- Visualização detalhada
+- Cadastro, edição e exclusão
+- Visualização detalhada individual
+- Lista completa com filtros
 
 ### Gestão de Notas
-- Registro de notas em 5 disciplinas cadastradas no back-end:
-  - Matemática
-  - Português
-  - Ciências
-  - História
-  - Geografia
+- Registro em 5 disciplinas: Matemática, Português, Ciências, História e Geografia
 - Validação: notas de 0 a 10
 
 ### Controle de Frequência
-- Registro de frequência em percentual (0 a 100%)
-- Alertas para frequência abaixo de 75%
+- Registro em percentual (0 a 100%)
+- Alertas automáticos para frequência < 75%
 
 ### Cálculos Automáticos
 - Média individual de cada aluno
 - Média da turma por disciplina
 - Média geral da turma
-- Identificação de alunos acima da média da turma
+- Identificação de alunos acima da média
 - Identificação de alunos com frequência baixa
 
-### Dashboard Interativo
-- Visão geral do sistema
-- Cards com estatísticas
-- Alertas visuais para alunos que precisam de atenção
-- Lista de alunos destaque
+### Interface
+- Dashboard com estatísticas
+- Visualização em tabela ou cards
+- Design responsivo (web e mobile)
+- Alertas visuais contextuais
 
-### Interface Responsiva
-- Visualização em tabela ou grade (cards)
-- Design moderno com Tailwind CSS
-- Totalmente responsivo para desktop e mobile
+---
 
 ## Instalação e Execução
 
 ### Pré-requisitos
-- Node.js 18+ instalado
-- npm ou yarn
-
-## Instalação e Execução
-
-## Instalação e Execução
+- Node.js 18+
+- npm
+- Expo Go (para mobile)
 
 ### 1. Clone o repositório
-
-git clone <url do repositório quando eu tiver commitado>
+```bash
+git clone <url-do-repositorio>
 cd DTI-DIGITAL
+```
 
+### 2. Backend
+```bash
 cd Backend
 npm install
 npm run dev
+```
+Servidor rodando em `http://localhost:3000`
 
-O servidor estará rodando em http://localhost:3000
-
-3. Frontend
-
-Em outro terminal:
-
+### 3. Frontend Web
+```bash
 cd Frontend
 npm install
 npm run dev
+```
+Aplicação em `http://localhost:5173`
 
-A aplicação estará disponível em http://localhost: (verificar no terminal)
+### 4. Mobile (opcional)
+```bash
+cd Mobile
+npm install
+
+# Configure o IP no arquivo src/services/api.ts
+# Substitua SEU_IP pelo resultado de: ip addr show | grep inet
+
+npx expo start
+```
+Escaneie o QR Code com Expo Go no celular.
+
+---
 
 ## Estrutura do Projeto
 
@@ -94,163 +110,169 @@ A aplicação estará disponível em http://localhost: (verificar no terminal)
 ```
 Backend/
 ├── src/
-│   ├── controllers/
-│   │   ├── studentController.js    # CRUD de alunos
-│   │   └── gradeController.js      # Atualização de notas
-│   ├── routes/
-│   │   ├── studentRoutes.js        # Rotas de alunos
-│   │   └── gradeRoutes.js          # Rotas de notas
-│   ├── models/
-│   │   └── database.js             # Persistência em JSON
-│   ├── utils/
-│   │   └── calculations.js         # Cálculos de médias
-│   └── server.js                   # Servidor Express
+│   ├── controllers/    # Lógica das requisições
+│   ├── routes/         # Definição de rotas
+│   ├── models/         # Persistência (JSON)
+│   ├── utils/          # Cálculos e helpers
+│   └── server.js       # Entrada da aplicação
 ├── data/
-│   └── students.json               # Dados (gerado automaticamente)
-├── package.json
-└── .env
+│   └── students.json   # Gerado automaticamente
+└── package.json
 ```
 
 ### Frontend Web
 ```
 Frontend/
 ├── src/
-│   ├── components/
-│   │   ├── common/                 # Botões, Loading, Cards
-│   │   ├── layout/                 # Header, Layout
-│   │   └── students/               # Componentes de alunos
-│   ├── pages/
-│   │   ├── Dashboard.tsx
-│   │   ├── StudentList.tsx
-│   │   ├── StudentDetail.tsx
-│   │   └── StudentFormPage.tsx
-│   ├── services/
-│   │   ├── api.ts                  # Configuração Axios
-│   │   └── studentService.ts       # Chamadas à API
-│   ├── context/
-│   │   └── StudentContext.tsx      # Estado global
-│   ├── types/
-│   │   └── index.ts                # TypeScript types
+│   ├── components/     # Componentes reutilizáveis
+│   ├── pages/          # Páginas da aplicação
+│   ├── services/       # Chamadas à API
+│   ├── context/        # Estado global
+│   ├── types/          # TypeScript types
 │   └── App.tsx
-├── package.json
-└── tailwind.config.js
+└── package.json
 ```
-    
-API Endpoints
-Alunos
-
-GET /api/students - Lista todos os alunos com médias
-
-GET /api/students/id - Busca aluno por ID
-
-POST /api/students - Cria novo aluno
-
-PUT /api/students/id - Atualiza aluno
-
-DELETE /api/students/id - Remove aluno
-
-Notas e Frequência
-
-PUT /api/grades/id/grades - Atualiza notas do aluno
-
-PUT /api/grades/id/attendance - Atualiza frequência do aluno
-
-Relatórios
-
-GET /api/students/reports/above-average - Alunos acima da média
-
-GET /api/students/reports/low-attendance - Alunos com frequência < 75%
-
-Sistema de Gerenciamento de Notas - Mobile
-Instalação
-
-cd Mobile
-npm install
-
-Configuração
-
-Configure o IP do Backend (em src/services/api.ts)
-
-const api = axios.create({ 
-  baseURL: 'http://SEU_IP:3000/api', // Substitua pelo IP da sua máquina
-});
-
-Como descobrir seu IP:
-
-# Linux/Mac
-ip addr show | grep inet
-# ou
-ifconfig | grep inet
-
-Certifique-se que o Backend está aceitando conexões externas (em Backend/src/server.js)
-
-app.listen(PORT, '0.0.0.0', () => { 
-  console.log(`Servidor rodando na porta ${PORT}`); 
-});
-
-Execução
-
-Backend (obrigatório estar rodandO
-
-cd Backend
-npm run dev
-
-Mobile
-
-cd Mobile
-npx expo start
-
-
-Opções de execução:
-
-Celular físico: Escaneie o QR Code com o app Expo Go
-
-Android Emulator: pressione a no terminal
-
-iOS Simulator: pressione i no terminal (apenas Mac)
-
-Estrutura do Projeto Mobile
-
-### Mobile
 
 ### Mobile
 ```
 Mobile/
 ├── src/
-│   ├── @types/                     # TypeScript types
-│   ├── components/
-│   │   ├── common/                 # Button, Card, Loading
-│   │   └── students/               # Componentes de alunos
-│   ├── screens/
-│   │   ├── DashboardScreen.tsx
-│   │   ├── StudentListScreen.tsx
-│   │   ├── StudentDetailScreen.tsx
-│   │   └── StudentFormScreen.tsx
-│   ├── navigation/
-│   │   └── AppNavigator.tsx        # React Navigation
-│   ├── services/
-│   │   ├── api.ts
-│   │   └── studentService.ts
-│   ├── context/
-│   │   └── StudentContext.tsx
-│   └── styles/
-│       ├── colors.ts               # Paleta de cores
-│       └── spacing.ts              # Espaçamentos
-├── App.tsx
-└── package.json
+│   ├── screens/        # Telas do app
+│   ├── components/     # Componentes reutilizáveis
+│   ├── navigation/     # Configuração de rotas
+│   ├── services/       # Chamadas à API
+│   ├── context/        # Estado global
+│   └── styles/         # Cores e espaçamentos
+└── App.tsx
 ```
 
+---
 
-Desenvolvimento:
+## API Endpoints
 
-O app usa StyleSheet nativo do React Native com cores e espaçamentos centralizados em:
+### Alunos
+- `GET /api/students` - Lista todos
+- `GET /api/students/:id` - Busca por ID
+- `POST /api/students` - Cria novo
+- `PUT /api/students/:id` - Atualiza
+- `DELETE /api/students/:id` - Remove
 
-src/styles/colors.ts
+### Notas e Frequência
+- `PUT /api/grades/:id/grades` - Atualiza notas
+- `PUT /api/grades/:id/attendance` - Atualiza frequência
 
-src/styles/spacing.ts
+### Relatórios
+- `GET /api/students/reports/above-average` - Alunos acima da média
+- `GET /api/students/reports/low-attendance` - Frequência < 75%
 
-Para adicionar novas cores ou espaçamentos, edite esses arquivos.
+---
 
-Erro ao instalar dependencias: 
-rm -rf node_modules package-lock.json
+## Premissas Assumidas
+
+### Regras de Negócio
+1. **Notas**: Valores de 0 a 10, permitindo decimais
+2. **Frequência**: Valores de 0 a 100 (percentual)
+3. **Limite de atenção**: Alunos com < 75% de frequência
+4. **Disciplinas**: 5 disciplinas fixas pré-definidas
+5. **Média**: Calculada como média aritmética simples
+6. **Alunos destaque**: Média estritamente maior que a média da turma
+
+### Persistência
+- Dados armazenados em arquivo JSON
+- Arquivo criado automaticamente na primeira execução
+- Ideal para desenvolvimento e testes
+- Produção recomenda-se banco de dados real
+
+### Validações
+- Nome do aluno obrigatório
+- Notas entre 0 e 10
+- Frequência entre 0 e 100
+- Disciplinas permitidas: apenas as 5 cadastradas
+
+---
+
+## Decisões de Projeto
+
+### Arquitetura
+- **Separação Frontend/Backend**: Permite escalabilidade e reuso da API
+- **RESTful API**: Padrão de mercado, fácil manutenção
+- **TypeScript**: Maior segurança de tipos e produtividade
+- **Context API**: Gerenciamento de estado sem dependências extras
+
+### Design Patterns
+- **Component-Based**: Componentes reutilizáveis e modulares
+- **Service Layer**: Lógica de API centralizada
+- **Controller Pattern**: Separação clara de responsabilidades
+- **Utility Functions**: Cálculos isolados para facilitar testes
+
+### UX/UI
+- **Responsivo**: Mobile-first, funciona em qualquer dispositivo
+- **Feedbacks Visuais**: Loading, cores para status, alertas contextuais
+- **Navegação Intuitiva**: URLs amigáveis, fluxo claro
+- **Duas interfaces**: Web (Tailwind) e Mobile (StyleSheet)
+
+### Performance
+- **Cálculos no Backend**: Evita processamento no cliente
+- **State Management**: Context API otimizado
+- **JSON Storage**: Suficiente para escopo do projeto
+
+---
+
+## Possíveis Melhorias Futuras
+
+- Autenticação de usuários
+- Banco de dados (PostgreSQL/MongoDB)
+- Gráficos de desempenho
+- Exportação de relatórios (PDF/Excel)
+- Testes automatizados
+- Dark mode
+- PWA
+
+---
+
+## Troubleshooting
+
+### Backend não inicia
+```bash
+cd Backend
+rm -rf node_modules
 npm install
+npm run dev
+```
+
+### Frontend com erro de cache
+```bash
+cd Frontend
+rm -rf node_modules/.vite
+npm run dev
+```
+
+### Mobile não conecta
+1. Verifique se backend está rodando
+2. Confirme IP correto em `Mobile/src/services/api.ts`
+3. Certifique-se que celular e PC estão na mesma rede Wi-Fi
+
+---
+
+## Autor
+
+Desenvolvido para processo seletivo DTI Digital - Vaga de Estágio React
+
+---
+
+## Licença
+
+Este projeto foi desenvolvido para fins educacionais e de avaliação técnica.
+```
+
+---
+
+## Crie também o `.gitignore` na raiz:
+```
+node_modules/
+dist/
+.env
+data/students.json
+*.log
+.expo/
+.expo-shared/

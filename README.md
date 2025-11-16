@@ -2,7 +2,7 @@
 
 Sistema desenvolvido para auxiliar professores no gerenciamento de notas e frequência de alunos, com cálculos automáticos de médias e identificação de alunos que necessitam atenção especial.
 
-Desenvolvido como parte do processo seletivo DTI Digital.
+
 
 ---
 

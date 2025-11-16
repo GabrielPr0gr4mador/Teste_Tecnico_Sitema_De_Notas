@@ -213,6 +213,8 @@ Estrutura do Projeto Mobile
 
 ### Mobile
 
+### Mobile
+```
 Mobile/
 ├── src/
 │   ├── @types/                     # TypeScript types
@@ -236,6 +238,7 @@ Mobile/
 │       └── spacing.ts              # Espaçamentos
 ├── App.tsx
 └── package.json
+```
 
 
 Desenvolvimento:

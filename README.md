@@ -86,57 +86,54 @@ cd Frontend
 npm install
 npm run dev
 
-A aplicação estará disponível em http://localhost:(verificar no terminal)
+A aplicação estará disponível em http://localhost: (verificar no terminal)
 
-DTI-DIGITAL/
-├── Backend/
-│   ├── src/
-│   │   ├── controllers/
-│   │   │   ├── studentController.js
-│   │   │   └── gradeController.js
-│   │   ├── routes/
-│   │   │   ├── studentRoutes.js
-│   │   │   └── gradeRoutes.js
-│   │   ├── models/
-│   │   │   └── database.js
-│   │   ├── utils/
-│   │   │   └── calculations.js
-│   │   └── server.js
-│   ├── data/
-│   │   └── students.json (gerado automaticamente)
-│   ├── package.json
-│   └── .env
-└── Frontend/
-    ├── src/
-    │   ├── components/
-    │   │   ├── common/
-    │   │   │   ├── AlertCard.tsx
-    │   │   │   ├── Button.tsx
-    │   │   │   └── LoadingSpinner.tsx
-    │   │   ├── layout/
-    │   │   │   ├── Header.tsx
-    │   │   │   └── Layout.tsx
-    │   │   └── students/
-    │   │       ├── GradeInput.tsx
-    │   │       ├── StudentCard.tsx
-    │   │       ├── StudentForm.tsx
-    │   │       └── StudentTable.tsx
-    │   ├── pages/
-    │   │   ├── Dashboard.tsx
-    │   │   ├── StudentDetail.tsx
-    │   │   ├── StudentFormPage.tsx
-    │   │   └── StudentList.tsx
-    │   ├── services/
-    │   │   ├── api.ts
-    │   │   └── studentService.ts
-    │   ├── context/
-    │   │   └── StudentContext.tsx
-    │   ├── types/
-    │   │   └── index.ts
-    │   ├── App.tsx
-    │   └── main.tsx
-    ├── package.json
-    ├── tailwind.config.js
+## Estrutura do Projeto
+
+### Backend
+
+Backend/
+├── src/
+│   ├── controllers/
+│   │   ├── studentController.js    # CRUD de alunos
+│   │   └── gradeController.js      # Atualização de notas
+│   ├── routes/
+│   │   ├── studentRoutes.js        # Rotas de alunos
+│   │   └── gradeRoutes.js          # Rotas de notas
+│   ├── models/
+│   │   └── database.js             # Persistência em JSON
+│   ├── utils/
+│   │   └── calculations.js         # Cálculos de médias
+│   └── server.js                   # Servidor Express
+├── data/
+│   └── students.json               # Dados (gerado automaticamente)
+├── package.json
+└── .env
+
+
+### Frontend Web
+
+Frontend/
+├── src/
+│   ├── components/
+│   │   ├── common/                 # Botões, Loading, Cards
+│   │   ├── layout/                 # Header, Layout
+│   │   └── students/               # Componentes de alunos
+│   ├── pages/
+│   │   ├── Dashboard.tsx
+│   │   ├── StudentList.tsx
+│   │   ├── StudentDetail.tsx
+│   │   └── StudentFormPage.tsx
+│   ├── services/
+│   │   ├── api.ts                  # Configuração Axios
+│   │   └── studentService.ts       # Chamadas à API
+│   ├── context/
+│   │   └── StudentContext.tsx      # Estado global
+│   ├── types/
+│   │   └── index.ts                # TypeScript types
+│   └── App.tsx
+├── package.json
+└── tailwind.config.js
     └── vite.config.ts
     
 API Endpoints
@@ -214,17 +211,29 @@ iOS Simulator: pressione i no terminal (apenas Mac)
 
 Estrutura do Projeto Mobile
 
+### Mobile
+
 Mobile/
 ├── src/
-│   ├── @types/          # Tipos TypeScript
-│   ├── components/      # Componentes reutilizáveis
-│   │   ├── common/      # Componentes comuns (Button, Card, Loading)
-│   │   └── students/    # Componentes de estudantes
-│   ├── screens/         # Telas do app
-│   ├── navigation/      # Configuração de navegação
-│   ├── services/        # Serviços de API
-│   ├── context/         # Context API
-│   └── styles/          # Estilos globais
+│   ├── @types/                     # TypeScript types
+│   ├── components/
+│   │   ├── common/                 # Button, Card, Loading
+│   │   └── students/               # Componentes de alunos
+│   ├── screens/
+│   │   ├── DashboardScreen.tsx
+│   │   ├── StudentListScreen.tsx
+│   │   ├── StudentDetailScreen.tsx
+│   │   └── StudentFormScreen.tsx
+│   ├── navigation/
+│   │   └── AppNavigator.tsx        # React Navigation
+│   ├── services/
+│   │   ├── api.ts
+│   │   └── studentService.ts
+│   ├── context/
+│   │   └── StudentContext.tsx
+│   └── styles/
+│       ├── colors.ts               # Paleta de cores
+│       └── spacing.ts              # Espaçamentos
 ├── App.tsx
 └── package.json
 

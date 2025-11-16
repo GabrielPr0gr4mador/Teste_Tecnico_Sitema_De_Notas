@@ -91,7 +91,7 @@ A aplicação estará disponível em http://localhost: (verificar no terminal)
 ## Estrutura do Projeto
 
 ### Backend
-
+```
 Backend/
 ├── src/
 │   ├── controllers/
@@ -109,10 +109,10 @@ Backend/
 │   └── students.json               # Dados (gerado automaticamente)
 ├── package.json
 └── .env
-
+```
 
 ### Frontend Web
-
+```
 Frontend/
 ├── src/
 │   ├── components/
@@ -134,7 +134,7 @@ Frontend/
 │   └── App.tsx
 ├── package.json
 └── tailwind.config.js
-    └── vite.config.ts
+```
     
 API Endpoints
 Alunos

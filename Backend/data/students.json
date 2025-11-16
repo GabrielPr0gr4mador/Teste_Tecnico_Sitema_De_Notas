@@ -1,0 +1,56 @@
+{
+  "students": [
+    {
+      "id": "mi16t0zp",
+      "name": "Gabriel Gonçalves de Almeida",
+      "grades": {
+        "matematica": 8,
+        "portugues": 8,
+        "economia": 8,
+        "historia": 10,
+        "geografia": 10
+      },
+      "attendance": 80,
+      "createdAt": "2025-11-16T03:59:50.341Z"
+    },
+    {
+      "id": "mi18i1z4",
+      "name": "Thiago Gomes",
+      "grades": {
+        "matematica": 5,
+        "portugues": 8,
+        "economia": 5,
+        "historia": 6,
+        "geografia": 7
+      },
+      "attendance": 90,
+      "createdAt": "2025-11-16T04:47:17.632Z"
+    },
+    {
+      "id": "mi18is80",
+      "name": "João Pedro",
+      "grades": {
+        "matematica": 5,
+        "portugues": 0,
+        "economia": 5,
+        "historia": 8,
+        "geografia": 10
+      },
+      "attendance": 50,
+      "createdAt": "2025-11-16T04:47:51.648Z"
+    },
+    {
+      "id": "mi1wgdlu",
+      "name": "Lucas Gomes",
+      "grades": {
+        "matematica": 5,
+        "portugues": 6,
+        "ciencias": 10,
+        "historia": 8,
+        "geografia": 9
+      },
+      "attendance": 77,
+      "createdAt": "2025-11-16T15:57:50.178Z"
+    }
+  ]
+}

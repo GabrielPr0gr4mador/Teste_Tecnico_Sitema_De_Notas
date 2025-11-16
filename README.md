@@ -230,6 +230,62 @@ Mobile/
 
 ---
 
+---
+
+## Screenshots
+
+### Frontend Web
+
+#### Dashboard
+![Dashboard](./docs/images/Dashboard.png)
+*Visão geral com estatísticas e alertas*
+
+#### Lista de Alunos
+![Lista de Alunos](./docs/images/ListaDeAlunos.png)
+*Visualização em tabela com todas as informações*
+
+#### Detalhes do Aluno
+![Detalhes](./docs/images/DetalhesAluno.png)
+*Informações completas e notas por disciplina*
+
+#### Formulário
+![Formulário](./docs/images/FormularioNovoAluno.png)
+*Cadastro/edição de aluno com validações*
+
+### Cards
+![Cards](./docs/images/CardsDeAlunos.png)
+*Informações dos alunos em Cards
+### Mobile
+
+
+
+#### Dashboard Mobile
+![Dashboard Mobile](./docs/images/dashboard-mobile.png)
+
+#### Lista Mobile
+![Lista Mobile](./docs/images/lista-mobile.png)
+
+#### Detalhes Mobile
+![Detalhes Mobile](./docs/images/detalhes-mobile.png)
+
+---
+```
+
+---
+
+## Estrutura de pastas para imagens:
+```
+DTI-DIGITAL/
+├── docs/
+│   └── images/
+│       ├── dashboard-web.png
+│       ├── lista-alunos-web.png
+│       ├── detalhes-aluno-web.png
+│       ├── formulario-web.png
+│       ├── dashboard-mobile.png
+│       ├── lista-mobile.png
+│       └── detalhes-mobile.png
+
 ## Troubleshooting
 
 ### Backend não inicia
